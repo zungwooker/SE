@@ -237,8 +237,8 @@
 												"$ref": "AAAAAAGAwVAtWLdNOtc="
 											},
 											"font": "Arial;13;0",
-											"left": 24.72998046875,
-											"top": 5,
+											"left": 48.72998046875,
+											"top": 13,
 											"width": 86.2236328125,
 											"height": 13,
 											"text": "상품 정보 검색"
@@ -250,16 +250,18 @@
 												"$ref": "AAAAAAGAwVAtWLdNOtc="
 											},
 											"font": "Arial;13;1",
-											"left": 5,
-											"top": 5,
+											"left": 29,
+											"top": 13,
 											"width": 14.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
 									],
 									"font": "Arial;13;0",
-									"width": 881,
-									"height": 592,
+									"left": 24,
+									"top": 8,
+									"width": 721,
+									"height": 457,
 									"nameLabel": {
 										"$ref": "AAAAAAGAwVAtWLdOUJs="
 									},
@@ -310,7 +312,7 @@
 													"top": 174,
 													"width": 99.67724609375,
 													"height": 13,
-													"text": "Lifeline1: 구매자"
+													"text": ": 구매자"
 												},
 												{
 													"_type": "LabelView",
@@ -2050,7 +2052,6 @@
 							"_parent": {
 								"$ref": "AAAAAAGAwVAtV7dLUcI="
 							},
-							"name": "Lifeline1",
 							"represent": {
 								"$ref": "AAAAAAGAwVHENbfWx40="
 							},
@@ -2307,7 +2308,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGAwVAtV7dKz5w="
 					},
-					"name": "Role5"
+					"name": "Role5",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -2370,8 +2372,8 @@
 												"$ref": "AAAAAAGAwm0bEfZpKNE="
 											},
 											"font": "Arial;13;0",
-											"left": 24.72998046875,
-											"top": 5,
+											"left": 48.72998046875,
+											"top": 77,
 											"width": 27,
 											"height": 13,
 											"text": "구매"
@@ -2383,16 +2385,18 @@
 												"$ref": "AAAAAAGAwm0bEfZpKNE="
 											},
 											"font": "Arial;13;1",
-											"left": 5,
-											"top": 5,
+											"left": 29,
+											"top": 77,
 											"width": 14.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
 									],
 									"font": "Arial;13;0",
+									"left": 24,
+									"top": 72,
 									"width": 881,
-									"height": 592,
+									"height": 313,
 									"nameLabel": {
 										"$ref": "AAAAAAGAwm0bEfZqL9k="
 									},
@@ -2443,7 +2447,7 @@
 													"top": 238,
 													"width": 119,
 													"height": 13,
-													"text": "Lifeline1: 구매자"
+													"text": ": 구매자"
 												},
 												{
 													"_type": "LabelView",
@@ -4161,7 +4165,6 @@
 							"_parent": {
 								"$ref": "AAAAAAGAwm0bEfZnrrE="
 							},
-							"name": "Lifeline1",
 							"represent": {
 								"$ref": "AAAAAAGAwm3q9Pao/UQ="
 							},
@@ -4383,7 +4386,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGAwm0bEfZmqGo="
 					},
-					"name": "Role4"
+					"name": "Role4",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -4437,8 +4441,8 @@
 												"$ref": "AAAAAAGAwn+O6Ab60w4="
 											},
 											"font": "Arial;13;0",
-											"left": 24.72998046875,
-											"top": 5,
+											"left": 80.72998046875,
+											"top": 125,
 											"width": 115.83544921875,
 											"height": 13,
 											"text": "상품 구매 내역 조회"
@@ -4450,16 +4454,18 @@
 												"$ref": "AAAAAAGAwn+O6Ab60w4="
 											},
 											"font": "Arial;13;1",
-											"left": 5,
-											"top": 5,
+											"left": 61,
+											"top": 125,
 											"width": 14.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
 									],
 									"font": "Arial;13;0",
-									"width": 801,
-									"height": 592,
+									"left": 56,
+									"top": 120,
+									"width": 657,
+									"height": 377,
 									"nameLabel": {
 										"$ref": "AAAAAAGAwn+O6Qb7U/4="
 									},
@@ -6229,7 +6235,7 @@
 													"top": 230,
 													"width": 99.67724609375,
 													"height": 13,
-													"text": "Lifeline1: 구매자"
+													"text": ": 구매자"
 												},
 												{
 													"_type": "LabelView",
@@ -7016,12 +7022,12 @@
 												"$ref": "AAAAAAGAx4wO/qdTpaU="
 											},
 											"font": "Arial;13;0",
-											"left": 512.70556640625,
-											"top": 312,
+											"left": 527.70556640625,
+											"top": 335,
 											"width": 175.5888671875,
 											"height": 13,
-											"alpha": 0.18534792735418806,
-											"distance": 81.39410298049853,
+											"alpha": -0.09445492551145446,
+											"distance": 95.42536350467836,
 											"text": "1 : *getPurchaseHistory( )"
 										},
 										{
@@ -7483,7 +7489,6 @@
 							"_parent": {
 								"$ref": "AAAAAAGAwn+O6Ab4ZGM="
 							},
-							"name": "Lifeline1",
 							"represent": {
 								"$ref": "AAAAAAGAx4gyToRN11o="
 							},
@@ -7858,7 +7863,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGAwn+O6Ab36iw="
 					},
-					"name": "Role4"
+					"name": "Role4",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -7961,8 +7967,8 @@
 												"$ref": "AAAAAAGAx4YSdHhfynU="
 											},
 											"font": "Arial;13;0",
-											"left": 32.72998046875,
-											"top": 5,
+											"left": 48.72998046875,
+											"top": 69,
 											"width": 99.2236328125,
 											"height": 13,
 											"text": "구매 만족도 평가"
@@ -7974,17 +7980,18 @@
 												"$ref": "AAAAAAGAx4YSdHhfynU="
 											},
 											"font": "Arial;13;1",
-											"left": 13,
-											"top": 5,
+											"left": 29,
+											"top": 69,
 											"width": 14.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 8,
-									"width": 692,
-									"height": 592,
+									"left": 24,
+									"top": 64,
+									"width": 625,
+									"height": 353,
 									"nameLabel": {
 										"$ref": "AAAAAAGAx4YSdHhgweo="
 									},
