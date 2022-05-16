@@ -614,7 +614,7 @@
 													"top": 367,
 													"width": 110,
 													"height": 13,
-													"text": "상품"
+													"text": "Clothes"
 												},
 												{
 													"_type": "LabelView",
@@ -2086,7 +2086,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGAwVAtV7dLUcI="
 							},
-							"name": "상품",
+							"name": "Clothes",
 							"represent": {
 								"$ref": "AAAAAAGAwVIzJ7gpWgg="
 							},
@@ -2307,8 +2307,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGAwVAtV7dKz5w="
 					},
-					"name": "Role5",
-					"type": ""
+					"name": "Role5"
 				},
 				{
 					"_type": "UMLAttribute",
@@ -3697,7 +3696,7 @@
 													"top": 207,
 													"width": 110,
 													"height": 13,
-													"text": "구매내역"
+													"text": "구매의류"
 												},
 												{
 													"_type": "LabelView",
@@ -3707,7 +3706,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 106.20263671875,
+													"width": 110.24609375,
 													"height": 13,
 													"text": "(from Interaction1)"
 												},
@@ -4198,7 +4197,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGAwm0bEfZnrrE="
 							},
-							"name": "구매내역",
+							"name": "구매의류",
 							"represent": {
 								"$ref": "AAAAAAGAy1P2wOnPAzc="
 							},
@@ -4713,7 +4712,7 @@
 													"top": 399,
 													"width": 126,
 													"height": 13,
-													"text": "구매내역"
+													"text": "구매의류"
 												},
 												{
 													"_type": "LabelView",
@@ -7472,7 +7471,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGAwn+O6Ab4ZGM="
 							},
-							"name": "구매내역",
+							"name": "구매의류",
 							"represent": {
 								"$ref": "AAAAAAGAwoCZVgh5Dn8="
 							},
@@ -7859,8 +7858,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGAwn+O6Ab36iw="
 					},
-					"name": "Role4",
-					"type": ""
+					"name": "Role4"
 				},
 				{
 					"_type": "UMLAttribute",
@@ -8239,7 +8237,7 @@
 													"top": 327,
 													"width": 182.25390625,
 													"height": 13,
-													"text": "해당 상품 구매 내역: 구매 내역"
+													"text": "해당 구매 의류: 구매 의류"
 												},
 												{
 													"_type": "LabelView",
@@ -10253,7 +10251,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGAx4YSdHhdPF4="
 							},
-							"name": "해당 상품 구매 내역",
+							"name": "해당 구매 의류",
 							"represent": {
 								"$ref": "AAAAAAGAx4eFgYEjyhI="
 							},
@@ -10467,7 +10465,7 @@
 							}
 						}
 					],
-					"type": "구매 내역"
+					"type": "구매 의류"
 				},
 				{
 					"_type": "UMLAttribute",
