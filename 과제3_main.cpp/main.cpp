@@ -39,19 +39,19 @@ void doTask(void){
     shoppingSystem service; // 모든 객체가 포함 된 하나의 서비스
     shoppingSystem* curService = &service; // 서비스 포인터
     string line;
-    ifstream file;
-    file.open("C:\\Users\\한주덕\\Desktop\\SE_3_file\\fin.txt"); // 읽는 파일 open
+    ifstream input;
+    input.open("C:\\Users\\한주덕\\Desktop\\SE_3_file\\fin.txt"); // 읽는 파일 open
     
     int is_program_exit = 1;
 
     while (is_program_exit) {//한줄씩 읽는 루프
-        getline(file, line);
-        is_program_exit = menuSwitch(line); // menuSwitch가 return 값이 항상 1이어야 반복
+        getline(input, line);
+        is_program_exit = menuSwitch(line, curService); // menuSwitch가 return 값이 항상 1이어야 반복
         // 메뉴 번호가 6일때만 return 값이 0
     }
 }
 
-int menuSwitch(string line) //switch 및 해당하는 함수 사용
+int menuSwitch(string line, shoppingSystem* curService) //switch 및 해당하는 함수 사용
 {
     int menu_level_1 = 0, menu_level_2 = 0;
     istringstream ss(line);
