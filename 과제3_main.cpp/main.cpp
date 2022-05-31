@@ -6,26 +6,129 @@
 #include <vector>
 #include <sstream>
 #include <list>
-#include "UIinit.cpp"
-#include "datatype.h"
-
 
 using namespace std;
 
-/*    íŒŒì¼ ì“°ëŠ” ë°©ë²•
+class UIinit;
+class CtrlMemberManagement;
+
+struct member
+{
+    string name;
+    string personalCode;
+    string id;
+    string password;
+};
+
+class shoppingSystem
+{
+private:
+    /* data */
+public:
+    UIinit* init;
+    CtrlMemberManagement* memberManagement;
+    // CtrlMemberManagement;
+    // ...
+};
+
+class MemberInfoDatabase
+{
+private:
+    vector<member> memberList;
+public:
+    MemberInfoDatabase(/* args */);
+    ~MemberInfoDatabase();
+
+    int isExistInfo(){
         
-        íŒŒì¼ ì“°ë ¤ëŠ” uiclassì— ì•„ë˜ì™€ ê°™ì´ ì‘ì„±
+    }
+};
+
+MemberInfoDatabase::MemberInfoDatabase(/* args */)
+{
+}
+
+MemberInfoDatabase::~MemberInfoDatabase()
+{
+}
+
+
+class CtrlMemberManagement
+{
+private:
+    /* data */
+public:
+    CtrlMemberManagement(/* args */);
+    ~CtrlMemberManagement();
+
+    void addNewMember(shoppingSystem* curService, member newbie){
+        printf("CtrlMemberManagement::addNewMember called.\n");
+
+
+    }
+};
+
+CtrlMemberManagement::CtrlMemberManagement(/* args */)
+{
+}
+
+CtrlMemberManagement::~CtrlMemberManagement()
+{
+}
+
+class UIinit
+{
+private:
+    
+public:
+    UIinit();
+    ~UIinit();
+
+    void signUp(shoppingSystem* curService, string name, string personalCode, string id, string password){
+        ofstream ofs;
+
+        printf("UIinit::signUp called.\n");
+
+        ofs.open("C:\\Users\\Seo Jungwook\\Desktop\\output.txt", ios::out | ios::app);
+        ofs << "1.1. È¸¿ø°¡ÀÔ" << endl;
+        ofs << name << " " << personalCode << " " << id << " " << password << "\n" << endl;
+
+        member newbie;
+        newbie.name = name;
+        newbie.personalCode = personalCode;
+        newbie.id = id;
+        newbie.password = password;
+
+        curService->memberManagement->addNewMember(curService, newbie);
+    }
+
+    void logIn(string& id, string& password){
+
+    };
+};
+
+UIinit::UIinit(/* args */)
+{
+}
+
+UIinit::~UIinit()
+{
+}
+
+/*    ÆÄÀÏ ¾²´Â ¹æ¹ı
+        
+        ÆÄÀÏ ¾²·Á´Â uiclass¿¡ ¾Æ·¡¿Í °°ÀÌ ÀÛ¼º
 
        #include <fstream>
        ofstream ofs;
-       ofs.open("C:\\Users\\í•œì£¼ë•\\Desktop\\SE_3_file\\fout.txt", ios::out | ios::app); ê²½ë¡œëŠ” ì•Œì•„ì„œ ë°”ê¾¸ê¸°
-       openì‹œ í•­ìƒ path ì¼ì¹˜í•´ì•¼í•¨
-       ofs<< "~~~~~"<< endl; ì´ì²˜ëŸ¼ ì‘ì„±í•˜ë©´ ë¨
+       ofs.open("C:\\Users\\ÇÑÁÖ´ö\\Desktop\\SE_3_file\\fout.txt", ios::out | ios::app); °æ·Î´Â ¾Ë¾Æ¼­ ¹Ù²Ù±â
+       open½Ã Ç×»ó path ÀÏÄ¡ÇØ¾ßÇÔ
+       ofs<< "~~~~~"<< endl; ÀÌÃ³·³ ÀÛ¼ºÇÏ¸é µÊ
 */
 
 
 void doTask();
-int menuSwitch(string line);
+int menuSwitch(string line, shoppingSystem* curSevice);
 
 int main(void){
     doTask();
@@ -35,29 +138,36 @@ void doTask(void){
     //int menu_level_1 = 0, mene_level_2 = 0;
     //int is_program_exit = 0;
     //member tmpMemberInfo;
-    
-    shoppingSystem service; // ëª¨ë“  ê°ì²´ê°€ í¬í•¨ ëœ í•˜ë‚˜ì˜ ì„œë¹„ìŠ¤
-    shoppingSystem* curService = &service; // ì„œë¹„ìŠ¤ í¬ì¸í„°
+    UIinit init;
+    CtrlMemberManagement memberManagement;
+
+    shoppingSystem service; // ¸ğµç °´Ã¼°¡ Æ÷ÇÔ µÈ ÇÏ³ªÀÇ ¼­ºñ½º
+    shoppingSystem* curService = &service; // ¼­ºñ½º Æ÷ÀÎÅÍ
     string line;
     ifstream input;
-    input.open("C:\\Users\\í•œì£¼ë•\\Desktop\\SE_3_file\\fin.txt"); // ì½ëŠ” íŒŒì¼ open
+
+    curService->init = &init;
+    curService->memberManagement = &memberManagement;
+
+    input.open("C:\\Users\\Seo Jungwook\\Desktop\\input.txt"); // ÀĞ´Â ÆÄÀÏ open
     
     int is_program_exit = 1;
 
-    while (is_program_exit) {//í•œì¤„ì”© ì½ëŠ” ë£¨í”„
+    while (is_program_exit) {//ÇÑÁÙ¾¿ ÀĞ´Â ·çÇÁ
         getline(input, line);
-        is_program_exit = menuSwitch(line, curService); // menuSwitchê°€ return ê°’ì´ í•­ìƒ 1ì´ì–´ì•¼ ë°˜ë³µ
-        // ë©”ë‰´ ë²ˆí˜¸ê°€ 6ì¼ë•Œë§Œ return ê°’ì´ 0
+        is_program_exit = menuSwitch(line, curService); // menuSwitch°¡ return °ªÀÌ Ç×»ó 1ÀÌ¾î¾ß ¹İº¹
+        // ¸Ş´º ¹øÈ£°¡ 6ÀÏ¶§¸¸ return °ªÀÌ 0
     }
 }
 
-int menuSwitch(string line, shoppingSystem* curService) //switch ë° í•´ë‹¹í•˜ëŠ” í•¨ìˆ˜ ì‚¬ìš©
+int menuSwitch(string line, shoppingSystem* curService) //switch ¹× ÇØ´çÇÏ´Â ÇÔ¼ö »ç¿ë
 {
     int menu_level_1 = 0, menu_level_2 = 0;
+    shoppingSystem* Service;
     istringstream ss(line);
     string stringBuffer;
 
-    //ì–»ì€ ë¬¸ì¥ì—ì„œ slice í•´ì„œ ì…ë ¥ê°’ ì–»ê¸°
+    //¾òÀº ¹®Àå¿¡¼­ slice ÇØ¼­ ÀÔ·Â°ª ¾ò±â
     vector<string> x;
     x.clear();
     while (getline(ss, stringBuffer, ' ')) {
@@ -70,11 +180,11 @@ int menuSwitch(string line, shoppingSystem* curService) //switch ë° í•´ë‹¹í•˜ëŠ
     ssInt1 >> menu_level_1; 
     ssInt2 >> menu_level_2;
 
-    /*  ë³€ìˆ˜ì–»ëŠ” ë°©ë²•
-     x[0] ì€ ë©”ë‰´ 1, x[1] ì€ ë©”ë‰´ 2
-     ì…ë ¥ê°’ì´ ì¡´ì¬ í•œë‹¤ë©´ ì¶”ê°€ì ìœ¼ë¡œ x[2], x[3]
-     x[~] ê°’ì€ stringì´ì–´ì„œ intë¡œ ë°”ê¾¸ë ¤ë©´ 
-     ì˜ˆì‹œ: x[3] string ê°’ì„ intê°’ìœ¼ë¡œ ë³€ê²½í•˜ëŠ” ë²•
+    /*  º¯¼ö¾ò´Â ¹æ¹ı
+     x[0] Àº ¸Ş´º 1, x[1] Àº ¸Ş´º 2
+     ÀÔ·Â°ªÀÌ Á¸Àç ÇÑ´Ù¸é Ãß°¡ÀûÀ¸·Î x[2], x[3]
+     x[~] °ªÀº stringÀÌ¾î¼­ int·Î ¹Ù²Ù·Á¸é 
+     ¿¹½Ã: x[3] string °ªÀ» int°ªÀ¸·Î º¯°æÇÏ´Â ¹ı
      int point;
      stringstream prmeter2(x[3]);
      prmeter2 >> point;
@@ -86,12 +196,13 @@ int menuSwitch(string line, shoppingSystem* curService) //switch ë° í•´ë‹¹í•˜ëŠ
     case 1:
         switch (menu_level_2)
         {
-        case 1: // íšŒì›ê°€ì…
-            
+        case 1: // È¸¿ø°¡ÀÔ
+            curService->init->signUp(curService, x[2], x[3], x[4], x[5]);
             return 1;
 
-        case 2: // íšŒì›íƒˆí‡´
+        case 2: // È¸¿øÅ»Åğ
             /* code */
+            cout << "great" << endl;
             return 1;
 
         default:
@@ -101,11 +212,11 @@ int menuSwitch(string line, shoppingSystem* curService) //switch ë° í•´ë‹¹í•˜ëŠ
     case 2:
         switch (menu_level_2)
         {
-        case 1: // ë¡œê·¸ì¸
+        case 1: // ·Î±×ÀÎ
             /* code */
             return 1;
 
-        case 2: //ë¡œê·¸ì•„ì›ƒ
+        case 2: //·Î±×¾Æ¿ô
             /* code */
             return 1;
 
@@ -177,7 +288,7 @@ int menuSwitch(string line, shoppingSystem* curService) //switch ë° í•´ë‹¹í•˜ëŠ
         }
 
     default:
-
+        return 0;
     }
 
 }
