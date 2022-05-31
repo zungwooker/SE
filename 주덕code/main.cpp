@@ -13,7 +13,6 @@
 #include "UIBuy.h"
 #include "PurchaseHistoryList.h"
 #include "CtrlInquiryPurchaseHistory.h"
-#include "Database.h"
 #include "CtrlEvaluateSatisfaction.h"
 #include "UIEvaluateSatisfaction.h"
 #include "ShoppingSystem.h"
@@ -58,9 +57,6 @@ void doTask(void) {
 int menuSwitch(string line, ShoppingSystem* shoppingSystem) //switch 및 해당하는 함수 사용
 {
     //시작할때 데이터베이스 필요한것 만들고 시작
-    
-
-    
 
     //shoppingSystem service; // 모든 객체가 포함 된 하나의 서비스
     //shoppingSystem* curService = &service; // 서비스 포인터

@@ -12,6 +12,8 @@ class UIBuy;
 class UIEvaluateSatisfaction;
 class UIInquiryPurchaseHistory;
 class UISearchClothes;
+class UIinit;
+class CtrlMemberManagement;
 
 class ShoppingSystem {
 public:
@@ -27,5 +29,7 @@ public:
 	UIEvaluateSatisfaction* uiEvaluateSatisfaction;
 	UIInquiryPurchaseHistory* uiInquiryPurchaseHistory;
 	UISearchClothes* uiSearchClothes;
+	UIinit* uiInit;
+	CtrlMemberManagement* ctrlMemberManagement;
 	ShoppingSystem();
 };

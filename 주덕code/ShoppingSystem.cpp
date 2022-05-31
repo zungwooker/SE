@@ -10,6 +10,8 @@
 #include "UIEvaluateSatisfaction.h"
 #include "UIInquiryPurchaseHistory.h"
 #include "UISearchClothes.h"
+#include "UIinit.h"
+#include "CtrlMemberManagement.h"
 
 
 ShoppingSystem::ShoppingSystem() {
@@ -24,5 +26,7 @@ ShoppingSystem::ShoppingSystem() {
 	ctrlBuy = new CtrlBuy();
 	ctrlEvaluateSatisfaction = new CtrlEvaluateSatisfaction();
 	ctrlSearchClothes = new CtrlSearchClothes();
+	uiInit = new UIinit();
+	ctrlMemberManagement = new CtrlMemberManagement();
 	productList->setdata();
 }
