@@ -13,17 +13,14 @@ void UIGetSoldOutClothes::startInterface(Clothes* clothes, ShoppingSystem* shopp
 	ofs << "3.3. 판매 완료 상품 조회" << endl;
 
 	for (int i = 0; i < 100; i++) {
-		// 판매자 id 비교
-		// 재고 0 확인
-		if (clothes[i].getsellerID() == shoppingSystem->curID) {
-			if(clothes[i].getstock() == 0){
+		if (clothes[i].getsellerID().size() != 0) {
 			ofs << "> " << clothes[i].getname() << " " << clothes[i].getcompany() << " " << clothes[i].getprice() << " "
-				<< clothes[i].getquantity() - clothes[i].getstock() << " " << clothes[i].getaveragePurchaseSatisfaction() << endl << endl;
-			}
+				<< clothes[i].getquantity() - clothes[i].getstock() << " " << clothes[i].getaveragePurchaseSatisfaction() << endl;
 		}
 		else
 			break;
-
 	}
+	ofs << endl;
 	ofs.close();
+
 }

@@ -43,16 +43,60 @@ void ProductList::createClothes(string name, string company, int price, int quan
 }
 
 Clothes* ProductList::getClothesOnSale(ShoppingSystem* shoppingSystem) {
-
-	return listClothes;
+	listClothesOnSale = new Clothes[100];
+	int cur = 0;
+	for (int i = 0; i < 100; i++) {
+		if (listClothes[i].getsellerID() == shoppingSystem->curID)
+		{
+			listClothesOnSale[cur].setsellerID(listClothes[i].getsellerID());
+			listClothesOnSale[cur].setname(listClothes[i].getname());
+			listClothesOnSale[cur].setcompany(listClothes[i].getcompany());
+			listClothesOnSale[cur].setprice(listClothes[i].getprice());
+			listClothesOnSale[cur].setquantity(listClothes[i].getquantity());
+			listClothesOnSale[cur].setstock(listClothes[i].getstock());
+			listClothesOnSale[cur].setaveragePurchaseSatisfaction(listClothes->getaveragePurchaseSatisfaction());
+			cur++;
+		}
+	}
+	return listClothesOnSale;
 }
 
 Clothes* ProductList::getSoldOutClothes(ShoppingSystem* shoppingSystem) {
-
-	return listClothes;
+	listSoldOutClothes = new Clothes[100];
+	int cur = 0;
+	for (int i = 0; i < 100; i++) {
+		if (listClothes[i].getsellerID() == shoppingSystem->curID)
+		{
+			if (listClothes[i].getstock() == 0) {
+				listSoldOutClothes[cur].setsellerID(listClothes[i].getsellerID());
+				listSoldOutClothes[cur].setname(listClothes[i].getname());
+				listSoldOutClothes[cur].setcompany(listClothes[i].getcompany());
+				listSoldOutClothes[cur].setprice(listClothes[i].getprice());
+				listSoldOutClothes[cur].setquantity(listClothes[i].getquantity());
+				listSoldOutClothes[cur].setstock(listClothes[i].getstock());
+				listSoldOutClothes[cur].setaveragePurchaseSatisfaction(listClothes->getaveragePurchaseSatisfaction());
+				cur++;
+			}
+		}
+	}
+	return listSoldOutClothes;
 }
 
 Clothes* ProductList::getSalesStatics(ShoppingSystem* shoppingSystem) {
-
-	return listClothes;
+	listClothesOnSale = new Clothes[100];
+	int cur = 0;
+	for (int i = 0; i < 100; i++) {
+		if (listClothes[i].getsellerID() == shoppingSystem->curID)
+		{
+			listClothesOnSale[cur].setsellerID(listClothes[i].getsellerID());
+			listClothesOnSale[cur].setname(listClothes[i].getname());
+			listClothesOnSale[cur].setcompany(listClothes[i].getcompany());
+			listClothesOnSale[cur].setprice(listClothes[i].getprice());
+			listClothesOnSale[cur].setquantity(listClothes[i].getquantity());
+			listClothesOnSale[cur].setstock(listClothes[i].getstock());
+			listClothesOnSale[cur].setaveragePurchaseSatisfaction(listClothes->getaveragePurchaseSatisfaction());
+			cur++;
+		}
+	}
+	return listClothesOnSale;
 }

@@ -8,6 +8,8 @@ class ShoppingSystem;
 class ProductList {
 public:
 	Clothes* listClothes;
+	Clothes* listClothesOnSale;
+	Clothes* listSoldOutClothes;
 	int curidx;
 	ProductList();
 	void getGoods(string content, ShoppingSystem* shoppingSystem);

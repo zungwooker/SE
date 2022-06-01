@@ -14,14 +14,14 @@ void UIGetSalesStatics::startInterface(Clothes* clothes, ShoppingSystem* shoppin
 
 	//파일에 넣기
 	for (int i = 0; i < 100; i++) {
-		if (clothes[i].getsellerID() == shoppingSystem->curID) {
+		if (clothes[i].getsellerID().size() != 0) {
 			ofs << "> " << clothes[i].getname() << " "
 				<< clothes[i].getprice() * (clothes[i].getquantity() - clothes[i].getstock())
-				<< " " << clothes[i].getaveragePurchaseSatisfaction() << endl << endl;
+				<< " " << clothes[i].getaveragePurchaseSatisfaction() << endl;
 		}
 		else
 			break;
-
 	}
+	ofs << endl;
 	ofs.close();
 }
