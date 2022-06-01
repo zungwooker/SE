@@ -8,8 +8,6 @@
 
 ProductList::ProductList() {
 	listClothes = new Clothes[100];
-	listClothesOnSale = new Clothes[100];
-	listSoldOutClothes = new Clothes[100];
 	curidx = 0;
 }
 
@@ -50,6 +48,7 @@ void ProductList::createClothes(string name, string company, int price, int quan
 }
 
 Clothes* ProductList::getClothesOnSale(ShoppingSystem* shoppingSystem) {
+	listClothesOnSale = new Clothes[100];
 	int cur = 0;
 	for (int i = 0; i < 100; i++) {
 		if (listClothes[i].getsellerID() == shoppingSystem->memberInfoDatabase->getCurID())
@@ -68,7 +67,13 @@ Clothes* ProductList::getClothesOnSale(ShoppingSystem* shoppingSystem) {
 }
 
 Clothes* ProductList::getSoldOutClothes(ShoppingSystem* shoppingSystem) {
+
+	listSoldOutClothes = new Clothes[100];
 	int cur = 0;
+
+	Clothes temp;
+	char c1[100], c2[100];
+
 	for (int i = 0; i < 100; i++) {
 		if (listClothes[i].getsellerID() == shoppingSystem->memberInfoDatabase->getCurID())
 		{
@@ -84,10 +89,25 @@ Clothes* ProductList::getSoldOutClothes(ShoppingSystem* shoppingSystem) {
 			}
 		}
 	}
+
+	for (int i = 0;i < cur;i++) {
+		for (int j = 0; j < cur - (i + 1);j++) {
+			strcpy(c1, listSoldOutClothes[j].getname().c_str());
+			strcpy(c2, listSoldOutClothes[j + 1].getname().c_str());
+
+			if (strcmp(c1, c2) > 0) {
+				temp = listSoldOutClothes[j];
+				listSoldOutClothes[j] = listSoldOutClothes[j + 1];
+				listSoldOutClothes[j + 1] = temp;
+			}
+		}
+	}
+
 	return listSoldOutClothes;
 }
 
 Clothes* ProductList::getSalesStatics(ShoppingSystem* shoppingSystem) {
+	listClothesOnSale = new Clothes[100];
 	int cur = 0;
 	for (int i = 0; i < 100; i++) {
 		if (listClothes[i].getsellerID() == shoppingSystem->memberInfoDatabase->getCurID())
