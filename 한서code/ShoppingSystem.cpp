@@ -10,6 +10,10 @@
 #include "UIEvaluateSatisfaction.h"
 #include "UIInquiryPurchaseHistory.h"
 #include "UISearchClothes.h"
+#include "UIinit.h"
+#include "CtrlMemberManagement.h"
+#include "MemberInfoDatabase.h"
+#include "UIProfile.h"
 
 #include "ClothesSale.h"
 #include "CtrlAddNewClothes.h"
@@ -33,6 +37,10 @@ ShoppingSystem::ShoppingSystem() {
 	ctrlBuy = new CtrlBuy();
 	ctrlEvaluateSatisfaction = new CtrlEvaluateSatisfaction();
 	ctrlSearchClothes = new CtrlSearchClothes();
+	uiInit = new UIinit();
+	ctrlMemberManagement = new CtrlMemberManagement();
+	memberInfoDatabase = new MemberInfoDatabase();
+	uiProfile = new UIProfile();
 
 
 	 clothesSale = new ClothesSale();

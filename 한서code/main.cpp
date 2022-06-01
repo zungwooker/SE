@@ -86,11 +86,11 @@ int menuSwitch(string line, ShoppingSystem* shoppingSystem) //switch 및 해당하는
         switch (menu_level_2)
         {
         case 1: // 회원가입
-
+            shoppingSystem->uiInit->signUp(shoppingSystem, x[2], x[3], x[4], x[5]);
             return 1;
 
         case 2: // 회원탈퇴
-            /* code */
+            shoppingSystem->uiProfile->withdrawal(shoppingSystem);
             return 1;
 
         default:
@@ -101,13 +101,11 @@ int menuSwitch(string line, ShoppingSystem* shoppingSystem) //switch 및 해당하는
         switch (menu_level_2)
         {
         case 1: // 로그인
-            /* code */
-        {
-            shoppingSystem->curID = x[2];
+            shoppingSystem->uiInit->logIn(shoppingSystem, x[2], x[3]);
             return 1;
-        }
+
         case 2: //로그아웃
-            /* code */
+            shoppingSystem->uiProfile->logOut(shoppingSystem);
             return 1;
 
         default:

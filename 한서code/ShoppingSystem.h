@@ -15,6 +15,10 @@ class UIBuy;
 class UIEvaluateSatisfaction;
 class UIInquiryPurchaseHistory;
 class UISearchClothes;
+class UIinit;
+class CtrlMemberManagement;
+class MemberInfoDatabase;
+class UIProfile;
 
 class ClothesSale;
 class CtrlAddNewClothes;
@@ -41,6 +45,10 @@ public:
 	UIEvaluateSatisfaction* uiEvaluateSatisfaction;
 	UIInquiryPurchaseHistory* uiInquiryPurchaseHistory;
 	UISearchClothes* uiSearchClothes;
+	UIinit* uiInit;
+	CtrlMemberManagement* ctrlMemberManagement;
+	MemberInfoDatabase* memberInfoDatabase;
+	UIProfile* uiProfile;
 
 	ClothesSale* clothesSale;
 	CtrlAddNewClothes* ctrlAddNewClothes;
