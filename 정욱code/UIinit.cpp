@@ -1,41 +1,42 @@
+#include <fstream>
 #include <iostream>
-#include <string>
-#include "datatype.h"
-
+#include "UIinit.h"
+#include "ShoppingSystem.h"
+#include "member.h"
+#include "CtrlMemberManagement.h"
 using namespace std;
 
-class UIinit
-{
-private:
-    
-public:
-    UIinit(/* args */);
-    ~UIinit();
+void UIinit::signUp(ShoppingSystem* curService, string name, string personalCode, string id, string password){
+    printf("UIinit::signUp called.\n");
 
-    member signUp(string& name, string& personalCode, string& id, string& password, FILE* out_fp, shoppingSystem* curService){
-        member newbie;
-        newbie.name = name;
-        newbie.personalCode = personalCode;
-        newbie.id = id;
-        newbie.password = password;
+    ofstream ofs;
+    member newbie;
 
-        fprintf(out_fp, "1.1. 회원가입\n");
-        fprintf(out_fp, "> %s %s %s %s\n\n", name, personalCode, id, password);
+    ofs.open("C:\\Users\\blair\\Desktop\\output.txt", ios::out | ios::app);
+    ofs << "1.1. 회원가입" << endl;
+    //ofs << name << " " << personalCode << " " << id << " " << password << "\n" << endl;
 
-        curService.CtrlMemberManagement.add();
+    newbie.name = name;
+    newbie.personalCode = personalCode;
+    newbie.id = id;
+    newbie.password = password;
 
-        return newbie;
-    };
-
-    void logIn(string& id, string& password){
-        
-    };
+    curService -> ctrlMemberManagement -> addNewMember(curService, newbie);
 };
 
-UIinit::UIinit(/* args */)
-{
-}
+void UIinit::logIn(ShoppingSystem* curService, string& id, string& password){
+    printf("UIinit::logIn called.\n");
 
-UIinit::~UIinit()
-{
-}
+    //ofstream ofs;
+    member logInInfo;
+
+    //ofs.open("C:\\Users\\Seo Jungwook\\Desktop\\output.txt", ios::out | ios::app);
+    //ofs << "2.1. 회원가입" << endl;
+    //ofs << id << " " << password << "\n" << endl;
+
+    
+    logInInfo.id = id;
+    logInInfo.password = password;
+
+    curService -> ctrlMemberManagement -> logInRequest(curService, logInInfo);
+};
