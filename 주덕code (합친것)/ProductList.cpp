@@ -92,8 +92,8 @@ Clothes* ProductList::getSoldOutClothes(ShoppingSystem* shoppingSystem) {
 
 	for (int i = 0;i < cur;i++) {
 		for (int j = 0; j < cur - (i + 1);j++) {
-			strcpy(c1, listSoldOutClothes[j].getname().c_str());
-			strcpy(c2, listSoldOutClothes[j + 1].getname().c_str());
+			strcpy_s(c1, listSoldOutClothes[j].getname().c_str());
+			strcpy_s(c2, listSoldOutClothes[j + 1].getname().c_str());
 
 			if (strcmp(c1, c2) > 0) {
 				temp = listSoldOutClothes[j];
