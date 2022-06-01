@@ -3,26 +3,40 @@
 #include "UIinit.h"
 #include "ShoppingSystem.h"
 #include "member.h"
+#include "CtrlMemberManagement.h"
 using namespace std;
 
 void UIinit::signUp(ShoppingSystem* curService, string name, string personalCode, string id, string password){
-    ofstream ofs;
-
     printf("UIinit::signUp called.\n");
 
+    ofstream ofs;
+    member newbie;
+
     ofs.open("C:\\Users\\Seo Jungwook\\Desktop\\output.txt", ios::out | ios::app);
-    ofs << "1.1. È¸¿ø°¡ÀÔ" << endl;
+    ofs << "1.1. íšŒì›ê°€ìž…" << endl;
     ofs << name << " " << personalCode << " " << id << " " << password << "\n" << endl;
 
-    member newbie;
     newbie.name = name;
     newbie.personalCode = personalCode;
     newbie.id = id;
     newbie.password = password;
 
-    curService->memberManagement->addNewMember(curService, newbie);
+    curService -> ctrlMemberManagement -> addNewMember(curService, newbie);
 };
 
-void logIn(string& id, string& password){
+void UIinit::logIn(ShoppingSystem* curService, string& id, string& password){
+    printf("UIinit::logIn called.\n");
 
+    ofstream ofs;
+    member logInInfo;
+
+    ofs.open("C:\\Users\\Seo Jungwook\\Desktop\\output.txt", ios::out | ios::app);
+    ofs << "2.1. íšŒì›ê°€ìž…" << endl;
+    ofs << id << " " << password << "\n" << endl;
+
+    
+    logInInfo.id = id;
+    logInInfo.password = password;
+
+    curService -> ctrlMemberManagement -> logInRequest(curService, logInInfo);
 };

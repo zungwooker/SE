@@ -12,6 +12,8 @@
 #include "UISearchClothes.h"
 #include "UIinit.h"
 #include "CtrlMemberManagement.h"
+#include "MemberInfoDatabase.h"
+#include "UIProfile.h"
 
 
 ShoppingSystem::ShoppingSystem() {
@@ -28,5 +30,7 @@ ShoppingSystem::ShoppingSystem() {
 	ctrlSearchClothes = new CtrlSearchClothes();
 	uiInit = new UIinit();
 	ctrlMemberManagement = new CtrlMemberManagement();
+	memberInfoDatabase = new MemberInfoDatabase();
+	uiProfile = new UIProfile();
 	productList->setdata();
 }
