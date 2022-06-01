@@ -1,12 +1,13 @@
 #pragma once
-#include <iostream>
 #include <vector>
+#include <iostream>
 #include "member.h"
 using namespace std;
 
 class ShoppingSystem;
 
-class MemberInfoDatabase {
+class MemberInfoDatabase
+{
 private:
     vector<member> memberList;
     string curID = "none";
@@ -17,4 +18,5 @@ public:
     void logOutCheck(ShoppingSystem* curService);
     void withdrawalCheck(ShoppingSystem* curService);
     string getCurID();
+
 };

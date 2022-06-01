@@ -1,10 +1,10 @@
-#pragma once
 #include <iostream>
 #include <string>
 #include <fstream>
 #include <vector>
 #include <sstream>
 #include <list>
+#include "ShoppingSystem.h"
 #include "CtrlSearchClothes.h"
 #include "ProductList.h"
 #include "Clothes.h"
@@ -20,6 +20,8 @@
 #include "CtrlGetClothesOnSale.h"
 #include "CtrlGetSoldOutClothes.h"
 #include "CtrlGetSaleStatics.h"
+#include "UIinit.h"
+#include "UIProfile.h"
 
 using namespace std;
 
@@ -32,64 +34,52 @@ int main(void) {
 }
 
 void doTask(void) {
-
+    
     ShoppingSystem* shoppingSystem = new ShoppingSystem;
     string line;
     ifstream file;
-    file.open("C:\\Users\\hanse\\OneDrive\\Desktop\\HW3\\input.txt"); // 읽는 파일 open
-
+    
+    file.open("C:\\Users\\hanse\\OneDrive\\Desktop\\HW3\\input.txt", ios::in);
+    
     int is_program_exit = 1;
-
-    while (is_program_exit) {//한줄씩 읽는 루프
+    
+    while (is_program_exit) {
         getline(file, line);
-        is_program_exit = menuSwitch(line, shoppingSystem); // menuSwitch가 return 값이 항상 1이어야 반복
-        // 메뉴 번호가 6일때만 return 값이 0
+        is_program_exit = menuSwitch(line, shoppingSystem);
+
     }
+    
 }
 
-int menuSwitch(string line, ShoppingSystem* shoppingSystem) //switch 및 해당하는 함수 사용
+int menuSwitch(string line, ShoppingSystem* shoppingSystem)
 {
-    //시작할때 데이터베이스 필요한것 만들고 시작
-
-    //shoppingSystem service; // 모든 객체가 포함 된 하나의 서비스
-    //shoppingSystem* curService = &service; // 서비스 포인터
+    
     int menu_level_1 = 0, menu_level_2 = 0;
     istringstream ss(line);
     string stringBuffer;
 
-    //얻은 문장에서 slice 해서 입력값 얻기
     vector<string> x;
     x.clear();
     while (getline(ss, stringBuffer, ' ')) {
         x.push_back(stringBuffer);
     }
 
-
     stringstream ssInt1(x[0]);
     stringstream ssInt2(x[1]);
     ssInt1 >> menu_level_1;
     ssInt2 >> menu_level_2;
 
-    /*  변수얻는 방법
-     x[0] 은 메뉴 1, x[1] 은 메뉴 2
-     입력값이 존재 한다면 추가적으로 x[2], x[3]
-     x[~] 값은 string이어서 int로 바꾸려면
-     예시: x[3] string 값을 int값으로 변경하는 법
-     int point;
-     stringstream prmeter2(x[3]);
-     prmeter2 >> point;
-    */
 
     switch (menu_level_1)
     {
     case 1:
         switch (menu_level_2)
         {
-        case 1: // 회원가입
-            shoppingSystem->uiInit->signUp(shoppingSystem, x[2], x[3], x[4], x[5]);
+        case 1:
+           shoppingSystem->uiInit->signUp(shoppingSystem, x[2], x[3], x[4], x[5]);
             return 1;
 
-        case 2: // 회원탈퇴
+        case 2:
             shoppingSystem->uiProfile->withdrawal(shoppingSystem);
             return 1;
 
@@ -100,11 +90,11 @@ int menuSwitch(string line, ShoppingSystem* shoppingSystem) //switch 및 해당하는
     case 2:
         switch (menu_level_2)
         {
-        case 1: // 로그인
+        case 1:
             shoppingSystem->uiInit->logIn(shoppingSystem, x[2], x[3]);
             return 1;
 
-        case 2: //로그아웃
+        case 2:
             shoppingSystem->uiProfile->logOut(shoppingSystem);
             return 1;
 
@@ -124,7 +114,7 @@ int menuSwitch(string line, ShoppingSystem* shoppingSystem) //switch 및 해당하는
             int quantity;
             stringstream prmeter2(x[5]);
             prmeter2 >> quantity;
-            shoppingSystem->uiAddNewClothes->creasteNewClothes(x[2],x[3], price, quantity, shoppingSystem);
+            shoppingSystem->uiAddNewClothes->creasteNewClothes(x[2], x[3], price, quantity, shoppingSystem);
             return 1;
         }
         case 2:
@@ -203,6 +193,7 @@ int menuSwitch(string line, ShoppingSystem* shoppingSystem) //switch 및 해당하는
             return 1;
         }
 
+
     case 6:
         switch (menu_level_2)
         {
@@ -218,3 +209,4 @@ int menuSwitch(string line, ShoppingSystem* shoppingSystem) //switch 및 해당하는
         return 1;
     }
 }
+

@@ -3,10 +3,13 @@
 #include "Clothes.h"
 #include "ProductList.h"
 #include "ShoppingSystem.h"
+#include "MemberInfoDatabase.h"
 
 
 ProductList::ProductList() {
 	listClothes = new Clothes[100];
+	listClothesOnSale = new Clothes[100];
+	listSoldOutClothes = new Clothes[100];
 	curidx = 0;
 }
 
@@ -24,7 +27,7 @@ bool ProductList::checkName(string name, ShoppingSystem* shoppingSystem)
 {
 
 	for (int i = 0; i < 100; i++) {
-		if (listClothes[i].getname() == name) 
+		if (listClothes[i].getname() == shoppingSystem->memberInfoDatabase->getCurID())
 			return false;
 		else
 			return true;
@@ -33,7 +36,7 @@ bool ProductList::checkName(string name, ShoppingSystem* shoppingSystem)
 
 void ProductList::createClothes(string name, string company, int price, int quantity, ShoppingSystem* shoppingSystem)
 {
-	listClothes[curidx].setsellerID(shoppingSystem->curID);
+	listClothes[curidx].setsellerID(shoppingSystem->memberInfoDatabase->getCurID());
 	listClothes[curidx].setname(name);
 	listClothes[curidx].setcompany(company);
 	listClothes[curidx].setprice(price);
@@ -43,10 +46,9 @@ void ProductList::createClothes(string name, string company, int price, int quan
 }
 
 Clothes* ProductList::getClothesOnSale(ShoppingSystem* shoppingSystem) {
-	listClothesOnSale = new Clothes[100];
 	int cur = 0;
 	for (int i = 0; i < 100; i++) {
-		if (listClothes[i].getsellerID() == shoppingSystem->curID)
+		if (listClothes[i].getsellerID() == shoppingSystem->memberInfoDatabase->getCurID())
 		{
 			listClothesOnSale[cur].setsellerID(listClothes[i].getsellerID());
 			listClothesOnSale[cur].setname(listClothes[i].getname());
@@ -62,10 +64,9 @@ Clothes* ProductList::getClothesOnSale(ShoppingSystem* shoppingSystem) {
 }
 
 Clothes* ProductList::getSoldOutClothes(ShoppingSystem* shoppingSystem) {
-	listSoldOutClothes = new Clothes[100];
 	int cur = 0;
 	for (int i = 0; i < 100; i++) {
-		if (listClothes[i].getsellerID() == shoppingSystem->curID)
+		if (listClothes[i].getsellerID() == shoppingSystem->memberInfoDatabase->getCurID())
 		{
 			if (listClothes[i].getstock() == 0) {
 				listSoldOutClothes[cur].setsellerID(listClothes[i].getsellerID());
@@ -83,10 +84,9 @@ Clothes* ProductList::getSoldOutClothes(ShoppingSystem* shoppingSystem) {
 }
 
 Clothes* ProductList::getSalesStatics(ShoppingSystem* shoppingSystem) {
-	listClothesOnSale = new Clothes[100];
 	int cur = 0;
 	for (int i = 0; i < 100; i++) {
-		if (listClothes[i].getsellerID() == shoppingSystem->curID)
+		if (listClothes[i].getsellerID() == shoppingSystem->memberInfoDatabase->getCurID())
 		{
 			listClothesOnSale[cur].setsellerID(listClothes[i].getsellerID());
 			listClothesOnSale[cur].setname(listClothes[i].getname());

@@ -9,7 +9,7 @@ class ClothesSale : public Clothes
 {
 public:
 	ClothesSale();
-	ClothesSale(string name, string company, int price, int quantity, ShoppingSystem* shoppingSystem);
-	void addClothes(string name, string company, int price, int quantity, ShoppingSystem *shoppingSystem);
+	ClothesSale(string sellerID, string name, string company, int price, int quantity);
+	void addClothes(string sellerID, string name, string company, int price, int quantity);
 };
 

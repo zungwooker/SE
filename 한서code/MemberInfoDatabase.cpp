@@ -5,79 +5,80 @@
 #include "member.h"
 #include "CtrlMemberManagement.h"
 
-int MemberInfoDatabase::doesExistMember(ShoppingSystem* curService, member newbie){
-    printf("MemberInfoDatabase::doesExistMember called.\n");
+int MemberInfoDatabase::doesExistMember(ShoppingSystem* curService, member newbie) {
 
     ofstream ofs;
     int exist = 0;
 
-    ofs.open("C:\\Users\\Seo Jungwook\\Desktop\\output.txt", ios::out | ios::app);
-    
-    for(int i=0; i<memberList.size(); i++){
-        if(memberList[i].id == newbie.id || memberList[i].personalCode == newbie.personalCode){
-            ofs << "ì´ë¯¸ ë“±ë¡ëœ íšŒì›ìž…ë‹ˆë‹¤." << curID << endl;
+    ofs.open("C:\\Users\\hanse\\OneDrive\\Desktop\\HW3\\output.txt", ios::out | ios::app);
+
+    for (int i = 0; i < memberList.size(); i++) {
+        if (memberList[i].id == newbie.id || memberList[i].personalCode == newbie.personalCode) {
+            ofs << "ÀÌ¹Ì µî·ÏµÈ È¸¿øÀÔ´Ï´Ù" << curID << endl;
             exist = 1;
         }
     }
+    ofs.close();
 
     return exist;
 };
 
-void MemberInfoDatabase::addMember(ShoppingSystem* curService, member newbie){
-    printf("MemberInfoDatabase::addMember called.\n");
-    
+void MemberInfoDatabase::addMember(ShoppingSystem* curService, member newbie) {
+
+
     memberList.push_back(newbie);
 };
 
-void MemberInfoDatabase::logInInfoCheck(ShoppingSystem* curService, member logInInfo){
-    printf("MemberInfoDatabase::logInInfoCheck called.\n");
+void MemberInfoDatabase::logInInfoCheck(ShoppingSystem* curService, member logInInfo) {
+
 
     int logInSuccess = 0;
 
-    for(int i=0; i<memberList.size(); i++){
-        if(memberList[i].id == logInInfo.id && memberList[i].personalCode == logInInfo.password){
+    for (int i = 0; i < memberList.size(); i++) {
+        if (memberList[i].id == logInInfo.id && memberList[i].password == logInInfo.password) {
             curID = memberList[i].id;
             logInSuccess = 1;
             break;
         }
     }
 
-    if(!logInSuccess){
+    if (!logInSuccess) {
 
     }
 };
 
-void MemberInfoDatabase::logOutCheck(ShoppingSystem* curService){
-    printf("MemberInfoDatabase::logOutCheck called.\n");
+void MemberInfoDatabase::logOutCheck(ShoppingSystem* curService) {
+
 
     ofstream ofs;
 
-    if(curID != "none"){
-        ofs.open("C:\\Users\\Seo Jungwook\\Desktop\\output.txt", ios::out | ios::app);
-        ofs << ">" << curID << endl;
+    if (curID != "none") {
+        ofs.open("C:\\Users\\hanse\\OneDrive\\Desktop\\HW3\\output.txt", ios::out | ios::app);
+        ofs << "> " << curID << endl << endl;
         curID = "none";
+        ofs.close();
     }
-    else{
-        ofs.open("C:\\Users\\Seo Jungwook\\Desktop\\output.txt", ios::out | ios::app);
-        ofs << "ë¡œê·¸ì¸ ìƒíƒœê°€ ì•„ë‹™ë‹ˆë‹¤.\n" << curID << endl;
+    else {
+        ofs.open("C:\\Users\\hanse\\OneDrive\\Desktop\\HW3\\output.txt", ios::out | ios::app);
+        ofs << "·Î±×ÀÎ»óÅÂ°¡ ¾Æ´Õ´Ï´Ù." << endl << curID << endl;
+        ofs.close();
     }
 }
 
-void MemberInfoDatabase::withdrawalCheck(ShoppingSystem* curService){
-    printf("MemberInfoDatabase::withdrawalCheck called.\n");
+void MemberInfoDatabase::withdrawalCheck(ShoppingSystem* curService) {
 
     ofstream ofs;
-    ofs.open("C:\\Users\\Seo Jungwook\\Desktop\\output.txt", ios::out | ios::app);
+    ofs.open("C:\\Users\\hanse\\OneDrive\\Desktop\\HW3\\output.txt", ios::out | ios::app);
 
-    if(curID == "none"){
-        ofs << "ë¡œê·¸ì¸ ìƒíƒœê°€ ì•„ë‹™ë‹ˆë‹¤.\n" << curID << endl;
+    if (curID == "none") {
+        ofs << "·Î±×ÀÎ»óÅÂ°¡ ¾Æ´Õ´Ï´Ù." << endl << curID << endl;
         return;
     }
 
-    ofs << ">" << curID << endl;
-
-    for(int i=0; i<memberList.size(); i++){
-        if(curID == memberList[i].id){
+    ofs << "> " << curID << endl << endl;
+    ofs.close();
+    for (int i = 0; i < memberList.size(); i++) {
+        if (curID == memberList[i].id) {
             memberList.erase(memberList.begin() + i);
             curID = "none";
             break;
@@ -85,8 +86,7 @@ void MemberInfoDatabase::withdrawalCheck(ShoppingSystem* curService){
     }
 }
 
-string MemberInfoDatabase::getCurID(){
-    printf("MemberInfoDatabase::getCurID called.\n");
+string MemberInfoDatabase::getCurID() {
 
     return curID;
 }

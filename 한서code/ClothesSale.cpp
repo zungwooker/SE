@@ -7,8 +7,8 @@ using namespace std;
 
 ClothesSale::ClothesSale() {}
 
-ClothesSale::ClothesSale(string name, string company, int price, int quantity, ShoppingSystem* shoppingSystem) {
-	this->setsellerID(shoppingSystem->curID);
+ClothesSale::ClothesSale(string sellerID, string name, string company, int price, int quantity) {
+	this->setsellerID(sellerID);
 	this->setname(name);
 	this->setcompany(company);
 	this->setprice(price);
@@ -16,7 +16,7 @@ ClothesSale::ClothesSale(string name, string company, int price, int quantity, S
 	this->setstock(quantity);
 }
 
-void ClothesSale::addClothes(string name, string company, int price, int quantity, ShoppingSystem *shoppingSystem)
+void ClothesSale::addClothes(string sellerID, string name, string company, int price, int quantity)
 {
-	ClothesSale* curClotheSale = new ClothesSale(name, company, price, quantity, shoppingSystem);
+	ClothesSale* curClotheSale = new ClothesSale(sellerID, name, company, price, quantity);
 }

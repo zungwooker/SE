@@ -10,11 +10,6 @@
 #include "UIEvaluateSatisfaction.h"
 #include "UIInquiryPurchaseHistory.h"
 #include "UISearchClothes.h"
-#include "UIinit.h"
-#include "CtrlMemberManagement.h"
-#include "MemberInfoDatabase.h"
-#include "UIProfile.h"
-
 #include "ClothesSale.h"
 #include "CtrlAddNewClothes.h"
 #include "CtrlGetClothesOnSale.h"
@@ -25,7 +20,17 @@
 #include "UIGetSalesStatics.h"
 #include "UIGetSoldOutClothes.h"
 
+#include "MemberInfoDatabase.h"
+#include "CtrlMemberManagement.h"
+#include "UIinit.h"
+#include "UIProfile.h"
+
 ShoppingSystem::ShoppingSystem() {
+
+	memberInfoDatabase = new MemberInfoDatabase();
+	ctrlMemberManagement = new CtrlMemberManagement();
+	uiInit = new UIinit();
+	uiProfile = new UIProfile();
 
 	productList = new ProductList();
 	purchaseHistoryList = new PurchaseHistoryList();
@@ -37,18 +42,13 @@ ShoppingSystem::ShoppingSystem() {
 	ctrlBuy = new CtrlBuy();
 	ctrlEvaluateSatisfaction = new CtrlEvaluateSatisfaction();
 	ctrlSearchClothes = new CtrlSearchClothes();
-	uiInit = new UIinit();
-	ctrlMemberManagement = new CtrlMemberManagement();
-	memberInfoDatabase = new MemberInfoDatabase();
-	uiProfile = new UIProfile();
 
-
-	 clothesSale = new ClothesSale();
-	 ctrlAddNewClothes = new CtrlAddNewClothes();
-	 uiAddNewClothes = new UIAddNewClothes();
-	 uiGetClothesOnSale = new UIGetClothesOnSale();
-	 uiGetSaleStatics = new UIGetSalesStatics();
-	 uiGetSoldOutClothes = new UIGetSoldOutClothes();
+	clothesSale = new ClothesSale();
+	ctrlAddNewClothes = new CtrlAddNewClothes();
+	uiAddNewClothes = new UIAddNewClothes();
+	uiGetClothesOnSale = new UIGetClothesOnSale();
+	uiGetSaleStatics = new UIGetSalesStatics();
+	uiGetSoldOutClothes = new UIGetSoldOutClothes();
 
 
 }

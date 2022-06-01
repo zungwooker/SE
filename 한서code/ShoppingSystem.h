@@ -15,10 +15,6 @@ class UIBuy;
 class UIEvaluateSatisfaction;
 class UIInquiryPurchaseHistory;
 class UISearchClothes;
-class UIinit;
-class CtrlMemberManagement;
-class MemberInfoDatabase;
-class UIProfile;
 
 class ClothesSale;
 class CtrlAddNewClothes;
@@ -30,9 +26,18 @@ class UIGetClothesOnSale;
 class UIGetSalesStatics;
 class UIGetSoldOutClothes;
 
+class MemberInfoDatabase;
+class CtrlMemberManagement;
+class UIinit;
+class UIProfile;
 
 class ShoppingSystem {
 public:
+	MemberInfoDatabase* memberInfoDatabase;
+	CtrlMemberManagement* ctrlMemberManagement;
+	UIinit* uiInit;
+	UIProfile* uiProfile;
+
 	Clothes* curClothes;
 	ClothesBought* clothesBought;
 	CtrlBuy* ctrlBuy;
@@ -45,10 +50,6 @@ public:
 	UIEvaluateSatisfaction* uiEvaluateSatisfaction;
 	UIInquiryPurchaseHistory* uiInquiryPurchaseHistory;
 	UISearchClothes* uiSearchClothes;
-	UIinit* uiInit;
-	CtrlMemberManagement* ctrlMemberManagement;
-	MemberInfoDatabase* memberInfoDatabase;
-	UIProfile* uiProfile;
 
 	ClothesSale* clothesSale;
 	CtrlAddNewClothes* ctrlAddNewClothes;
@@ -61,7 +62,4 @@ public:
 	UIGetSoldOutClothes* uiGetSoldOutClothes;
 	
 	ShoppingSystem();
-
-	//юс╫ц
-	string curID;
 };
