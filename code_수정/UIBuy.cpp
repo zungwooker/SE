@@ -14,7 +14,7 @@ void UIBuy::buyIt(ShoppingSystem* shoppingSystem) {
 
 	shoppingSystem->ctrlBuy->buyGoods(shoppingSystem);
 	//파일 쓰기
-	ofs.open("C:\\Users\\한주덕\\Desktop\\SE_3_file\\fout.txt", ios::out | ios::app);
+	ofs.open("C:\\Users\\blair\\Desktop\\output.txt", ios::out | ios::app);
 	ofs << "4.2. 상품구매 " << endl;
 	ofs << "> " << shoppingSystem->curClothes->getsellerID() << " " << shoppingSystem->curClothes->getname() << endl << endl;
 	ofs.close();

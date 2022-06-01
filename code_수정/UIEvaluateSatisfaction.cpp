@@ -12,7 +12,7 @@ void UIEvaluateSatisfaction::evaluetePurchaseStf(string prmt1, int point, Shoppi
 	ofstream ofs;
 	//파일에서 값 받아 들이고...
 	ClothesBought clothesBought = shoppingSystem->ctrlEvaluateSatisfaction->setPoint(prmt1, point, shoppingSystem);
-	ofs.open("C:\\Users\\한주덕\\Desktop\\SE_3_file\\fout.txt", ios::out | ios::app);
+	ofs.open("C:\\Users\\blair\\Desktop\\output.txt", ios::out | ios::app);
 	ofs << "4.4. 상품 구매 만족도 평가" << endl;
 	ofs << "> " << clothesBought.getsellerID() << " " << clothesBought.getname() << " " << clothesBought.getpurchaseSatisfaction() << endl << endl;
 	ofs.close();

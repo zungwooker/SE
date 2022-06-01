@@ -18,7 +18,7 @@ void UISearchClothes::searchGoods(string content, ShoppingSystem* shoppingSystem
 
 	shoppingSystem->ctrlSearchClothes->showGoods(content, shoppingSystem);
 
-	ofs.open("C:\\Users\\한주덕\\Desktop\\SE_3_file\\fout.txt", ios::out | ios::app);
+	ofs.open("C:\\Users\\blair\\Desktop\\output.txt", ios::out | ios::app);
 	ofs << "4.1. 상품 판매 정보" << endl;
 	ofs << "> " << shoppingSystem->curClothes->getsellerID()
 		<< " " << shoppingSystem->curClothes->getname()
