@@ -8,8 +8,6 @@
 
 ProductList::ProductList() {
 	listClothes = new Clothes[100];
-	listClothesOnSale = new Clothes[100];
-	listSoldOutClothes = new Clothes[100];
 	curidx = 0;
 }
 
@@ -46,6 +44,7 @@ void ProductList::createClothes(string name, string company, int price, int quan
 }
 
 Clothes* ProductList::getClothesOnSale(ShoppingSystem* shoppingSystem) {
+		listClothesOnSale = new Clothes[100];
 	int cur = 0;
 	for (int i = 0; i < 100; i++) {
 		if (listClothes[i].getsellerID() == shoppingSystem->memberInfoDatabase->getCurID())
@@ -64,6 +63,7 @@ Clothes* ProductList::getClothesOnSale(ShoppingSystem* shoppingSystem) {
 }
 
 Clothes* ProductList::getSoldOutClothes(ShoppingSystem* shoppingSystem) {
+	listSoldOutClothes = new Clothes[100];
 	int cur = 0;
 	for (int i = 0; i < 100; i++) {
 		if (listClothes[i].getsellerID() == shoppingSystem->memberInfoDatabase->getCurID())
@@ -84,6 +84,7 @@ Clothes* ProductList::getSoldOutClothes(ShoppingSystem* shoppingSystem) {
 }
 
 Clothes* ProductList::getSalesStatics(ShoppingSystem* shoppingSystem) {
+	listClothesOnSale = new Clothes[100];
 	int cur = 0;
 	for (int i = 0; i < 100; i++) {
 		if (listClothes[i].getsellerID() == shoppingSystem->memberInfoDatabase->getCurID())
