@@ -10,11 +10,11 @@ int MemberInfoDatabase::doesExistMember(ShoppingSystem* curService, member newbi
     ofstream ofs;
     int exist = 0;
 
-    ofs.open("C:\\Users\\ÇÑÁÖ´ö\\Desktop\\SE_3_file\\fout.txt", ios::out | ios::app);
+    ofs.open("C:\\Users\\blair\\Desktop\\output.txt", ios::out | ios::app);
 
     for (int i = 0; i < memberList.size(); i++) {
         if (memberList[i].id == newbie.id || memberList[i].personalCode == newbie.personalCode) {
-            ofs << "ÀÌ¹Ì µî·ÏµÈ È¸¿øÀÔ´Ï´Ù." << curID << endl;
+            ofs << "ï¿½Ì¹ï¿½ ï¿½ï¿½Ïµï¿½ È¸ï¿½ï¿½ï¿½Ô´Ï´ï¿½." << curID << endl;
             exist = 1;
         }
     }
@@ -35,7 +35,7 @@ void MemberInfoDatabase::logInInfoCheck(ShoppingSystem* curService, member logIn
     int logInSuccess = 0;
 
     for (int i = 0; i < memberList.size(); i++) {
-        if (memberList[i].id == logInInfo.id && memberList[i].personalCode == logInInfo.password) {
+        if (memberList[i].id == logInInfo.id && memberList[i].password == logInInfo.password) {
             curID = memberList[i].id;
             logInSuccess = 1;
             break;
@@ -53,14 +53,14 @@ void MemberInfoDatabase::logOutCheck(ShoppingSystem* curService) {
     ofstream ofs;
 
     if (curID != "none") {
-        ofs.open("C:\\Users\\ÇÑÁÖ´ö\\Desktop\\SE_3_file\\fout.txt", ios::out | ios::app);
-        ofs << ">" << curID << endl;
+        ofs.open("C:\\Users\\blair\\Desktop\\output.txt", ios::out | ios::app);
+        ofs << "> " << curID << endl << endl;
         curID = "none";
         ofs.close();
     }
     else {
-        ofs.open("C:\\Users\\ÇÑÁÖ´ö\\Desktop\\SE_3_file\\fout.txt", ios::out | ios::app);
-        ofs << "·Î±×ÀÎ »óÅÂ°¡ ¾Æ´Õ´Ï´Ù.\n" << curID << endl;
+        ofs.open("C:\\Users\\blair\\Desktop\\output.txt", ios::out | ios::app);
+        ofs << "ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½Æ´Õ´Ï´ï¿½.\n" << curID << endl;
         ofs.close();
     }
 }
@@ -68,14 +68,14 @@ void MemberInfoDatabase::logOutCheck(ShoppingSystem* curService) {
 void MemberInfoDatabase::withdrawalCheck(ShoppingSystem* curService) {
 
     ofstream ofs;
-    ofs.open("C:\\Users\\ÇÑÁÖ´ö\\Desktop\\SE_3_file\\fout.txt", ios::out | ios::app);
+    ofs.open("C:\\Users\\blair\\Desktop\\output.txt", ios::out | ios::app);
 
     if (curID == "none") {
-        ofs << "·Î±×ÀÎ »óÅÂ°¡ ¾Æ´Õ´Ï´Ù.\n" << curID << endl;
+        ofs << "ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½Æ´Õ´Ï´ï¿½.\n" << curID << endl;
         return;
     }
 
-    ofs << ">" << curID << endl;
+    ofs << "> " << curID << endl << endl;
     ofs.close();
     for (int i = 0; i < memberList.size(); i++) {
         if (curID == memberList[i].id) {

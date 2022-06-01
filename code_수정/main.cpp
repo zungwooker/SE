@@ -45,7 +45,7 @@ void doTask(void) {
     ShoppingSystem* shoppingSystem = new ShoppingSystem;
     string line;
     ifstream file;
-    file.open("C:\\Users\\한주덕\\Desktop\\SE_3_file\\fin.txt"); // 읽는 파일 open
+    file.open("C:\\Users\\blair\\Desktop\\input.txt"); // 읽는 파일 open
 
     int is_program_exit = 1;
 

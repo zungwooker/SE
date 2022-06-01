@@ -11,7 +11,7 @@ void UIinit::signUp(ShoppingSystem* curService, string name, string personalCode
     ofstream ofs;
     member newbie;
 
-    ofs.open("C:\\Users\\한주덕\\Desktop\\SE_3_file\\fout.txt", ios::out | ios::app);
+    ofs.open("C:\\Users\\blair\\Desktop\\output.txt", ios::out | ios::app);
     ofs << "1.1. 회원가입" << endl;
     ofs << "> " << name << " " << personalCode << " " << id << " " << password << endl << endl;
     ofs.close();
@@ -29,7 +29,7 @@ void UIinit::logIn(ShoppingSystem* curService, string& id, string& password) {
     ofstream ofs;
     member logInInfo;
 
-    ofs.open("C:\\Users\\한주덕\\Desktop\\SE_3_file\\fout.txt", ios::out | ios::app);
+    ofs.open("C:\\Users\\blair\\Desktop\\output.txt", ios::out | ios::app);
     ofs << "2.1. 로그인" << endl;
     ofs << "> " << id << " " << password << endl << endl;
     ofs.close();

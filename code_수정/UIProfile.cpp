@@ -12,7 +12,7 @@ void UIProfile::logOut(ShoppingSystem* curService) {
 
     ofstream ofs;
 
-    ofs.open("C:\\Users\\ÇÑÁÖ´ö\\Desktop\\SE_3_file\\fout.txt", ios::out | ios::app);
+    ofs.open("C:\\Users\\blair\\Desktop\\output.txt", ios::out | ios::app);
     ofs << "2.2. ·Î±×¾Æ¿ô" << endl;
     ofs.close();
 
@@ -24,7 +24,7 @@ void UIProfile::withdrawal(ShoppingSystem* curService) {
 
     ofstream ofs;
 
-    ofs.open("C:\\Users\\ÇÑÁÖ´ö\\Desktop\\SE_3_file\\fout.txt", ios::out | ios::app);
+    ofs.open("C:\\Users\\blair\\Desktop\\output.txt", ios::out | ios::app);
     ofs << "1.2. È¸¿øÅ»Åð" << endl;
     ofs.close();
 
