@@ -7,6 +7,8 @@
 
 using namespace std;
 
+void UIProfile::startInterface(){};
+
 void UIProfile::logOut(ShoppingSystem* curService) {
     printf("UIProfile::logOut called.\n");
 

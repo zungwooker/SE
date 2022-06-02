@@ -7,6 +7,8 @@
 
 using namespace std;
 
+void UIinit::startInterface(){};
+
 void UIinit::signUp(ShoppingSystem* curService, string name, string personalCode, string id, string password) {
 
     ofstream ofs;
