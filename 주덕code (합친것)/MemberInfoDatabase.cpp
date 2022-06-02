@@ -72,6 +72,7 @@ void MemberInfoDatabase::withdrawalCheck(ShoppingSystem* curService) {
 
     if (curID == "none") {
         ofs << "로그인상태가 아닙니다." << endl << curID << endl;
+        ofs.close();
         return;
     }
 
