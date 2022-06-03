@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void UIProfile::logOut(ShoppingSystem* curService){
+void UIProfile::logOut(ShoppingSystem* shoppingSystem){
     printf("UIProfile::logOut called.\n");
 
     ofstream ofs;
@@ -15,10 +15,10 @@ void UIProfile::logOut(ShoppingSystem* curService){
     ofs.open("C:\\Users\\Seo Jungwook\\Desktop\\output.txt", ios::out | ios::app);
     ofs << "2.2. 로그아웃" << endl;
 
-    curService -> ctrlMemberManagement -> logOutRequest(curService);
+    shoppingSystem -> ctrlMemberManagement -> logOutRequest(shoppingSystem);
 }
 
-void UIProfile::withdrawal(ShoppingSystem* curService){
+void UIProfile::withdrawal(ShoppingSystem* shoppingSystem){
     printf("UIProfile::withdrawal called.\n");
 
     ofstream ofs;
@@ -26,5 +26,5 @@ void UIProfile::withdrawal(ShoppingSystem* curService){
     ofs.open("C:\\Users\\Seo Jungwook\\Desktop\\output.txt", ios::out | ios::app);
     ofs << "1.2. 회원탈퇴" << endl;
 
-    curService -> ctrlMemberManagement ->withdrawalRequest(curService);
+    shoppingSystem -> ctrlMemberManagement ->withdrawalRequest(shoppingSystem);
 }

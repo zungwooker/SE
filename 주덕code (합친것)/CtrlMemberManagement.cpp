@@ -6,24 +6,24 @@
 #include "MemberInfoDatabase.h"
 using namespace std;
 
-void CtrlMemberManagement::addNewMember(ShoppingSystem* curService, member newbie) {
+void CtrlMemberManagement::addNewMember(ShoppingSystem* shoppingSystem, member newbie) {
 
-    if (!(curService->memberInfoDatabase->doesExistMember(curService, newbie))) {
-        curService->memberInfoDatabase->addMember(curService, newbie);
+    if (!(shoppingSystem->memberInfoDatabase->doesExistMember(shoppingSystem, newbie))) {
+        shoppingSystem->memberInfoDatabase->addMember(shoppingSystem, newbie);
     }
 };
 
-void CtrlMemberManagement::logInRequest(ShoppingSystem* curService, member logInInfo) {
+void CtrlMemberManagement::logInRequest(ShoppingSystem* shoppingSystem, member logInInfo) {
 
-    curService->memberInfoDatabase->logInInfoCheck(curService, logInInfo);
+    shoppingSystem->memberInfoDatabase->logInInfoCheck(shoppingSystem, logInInfo);
 }
 
-void CtrlMemberManagement::logOutRequest(ShoppingSystem* curService) {
+void CtrlMemberManagement::logOutRequest(ShoppingSystem* shoppingSystem) {
 
-    curService->memberInfoDatabase->logOutCheck(curService);
+    shoppingSystem->memberInfoDatabase->logOutCheck(shoppingSystem);
 }
 
-void CtrlMemberManagement::withdrawalRequest(ShoppingSystem* curService) {
+void CtrlMemberManagement::withdrawalRequest(ShoppingSystem* shoppingSystem) {
 
-    curService->memberInfoDatabase->withdrawalCheck(curService);
+    shoppingSystem->memberInfoDatabase->withdrawalCheck(shoppingSystem);
 }

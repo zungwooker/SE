@@ -6,6 +6,6 @@ class UIProfile
 {
 public:
     void startInterface();
-    void logOut(ShoppingSystem* curService);
-    void withdrawal(ShoppingSystem* curService);
+    void logOut(ShoppingSystem* shoppingSystem);
+    void withdrawal(ShoppingSystem* shoppingSystem);
 };

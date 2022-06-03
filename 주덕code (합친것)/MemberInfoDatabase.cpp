@@ -5,12 +5,12 @@
 #include "member.h"
 #include "CtrlMemberManagement.h"
 
-int MemberInfoDatabase::doesExistMember(ShoppingSystem* curService, member newbie) {
+int MemberInfoDatabase::doesExistMember(ShoppingSystem* shoppingSystem, member newbie) {
 
     ofstream ofs;
     int exist = 0;
 
-    ofs.open(curService->outputurl, ios::out | ios::app);
+    ofs.open(shoppingSystem->outputurl, ios::out | ios::app);
 
     for (int i = 0; i < memberList.size(); i++) {
         if (memberList[i].id == newbie.id || memberList[i].personalCode == newbie.personalCode) {
@@ -23,13 +23,13 @@ int MemberInfoDatabase::doesExistMember(ShoppingSystem* curService, member newbi
     return exist;
 };
 
-void MemberInfoDatabase::addMember(ShoppingSystem* curService, member newbie) {
+void MemberInfoDatabase::addMember(ShoppingSystem* shoppingSystem, member newbie) {
 
 
     memberList.push_back(newbie);
 };
 
-void MemberInfoDatabase::logInInfoCheck(ShoppingSystem* curService, member logInInfo) {
+void MemberInfoDatabase::logInInfoCheck(ShoppingSystem* shoppingSystem, member logInInfo) {
 
 
     int logInSuccess = 0;
@@ -47,28 +47,28 @@ void MemberInfoDatabase::logInInfoCheck(ShoppingSystem* curService, member logIn
     }
 };
 
-void MemberInfoDatabase::logOutCheck(ShoppingSystem* curService) {
+void MemberInfoDatabase::logOutCheck(ShoppingSystem* shoppingSystem) {
 
 
     ofstream ofs;
 
     if (curID != "none") {
-        ofs.open(curService->outputurl, ios::out | ios::app);
+        ofs.open(shoppingSystem->outputurl, ios::out | ios::app);
         ofs << "> " << curID << endl << endl;
         curID = "none";
         ofs.close();
     }
     else {
-        ofs.open(curService->outputurl, ios::out | ios::app);
+        ofs.open(shoppingSystem->outputurl, ios::out | ios::app);
         ofs << "로그인상태가 아닙니다." << endl << curID << endl;
         ofs.close();
     }
 }
 
-void MemberInfoDatabase::withdrawalCheck(ShoppingSystem* curService) {
+void MemberInfoDatabase::withdrawalCheck(ShoppingSystem* shoppingSystem) {
 
     ofstream ofs;
-    ofs.open(curService->outputurl, ios::out | ios::app);
+    ofs.open(shoppingSystem->outputurl, ios::out | ios::app);
 
     if (curID == "none") {
         ofs << "로그인상태가 아닙니다." << endl << curID << endl;

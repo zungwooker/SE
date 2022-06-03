@@ -12,11 +12,11 @@ private:
     vector<member> memberList;
     string curID = "none";
 public:
-    int doesExistMember(ShoppingSystem* curService, member newbie);
-    void addMember(ShoppingSystem* curService, member newbie);
-    void logInInfoCheck(ShoppingSystem* curService, member newbie);
-    void logOutCheck(ShoppingSystem* curService);
-    void withdrawalCheck(ShoppingSystem* curService);
+    int doesExistMember(ShoppingSystem* shoppingSystem, member newbie);
+    void addMember(ShoppingSystem* shoppingSystem, member newbie);
+    void logInInfoCheck(ShoppingSystem* shoppingSystem, member newbie);
+    void logOutCheck(ShoppingSystem* shoppingSystem);
+    void withdrawalCheck(ShoppingSystem* shoppingSystem);
     string getCurID();
 
 };

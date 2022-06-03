@@ -6,9 +6,9 @@ class ShoppingSystem;
 class CtrlMemberManagement
 {
 public:
-    void addNewMember(ShoppingSystem* curService, member newbie);
-    void logInRequest(ShoppingSystem* curService, member logInInfo);
-    void logOutRequest(ShoppingSystem* curService);
-    void withdrawalRequest(ShoppingSystem* curService);
+    void addNewMember(ShoppingSystem* shoppingSystem, member newbie);
+    void logInRequest(ShoppingSystem* shoppingSystem, member logInInfo);
+    void logOutRequest(ShoppingSystem* shoppingSystem);
+    void withdrawalRequest(ShoppingSystem* shoppingSystem);
 
 };

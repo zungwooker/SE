@@ -7,14 +7,15 @@
 
 using namespace std;
 
-void UIinit::startInterface(){};
+void UIinit::startInterface() {
+};
 
-void UIinit::signUp(ShoppingSystem* curService, string name, string personalCode, string id, string password) {
+void UIinit::signUp(ShoppingSystem* shoppingSystem, string name, string personalCode, string id, string password) {
 
     ofstream ofs;
     member newbie;
 
-    ofs.open(curService->outputurl, ios::out | ios::app);
+    ofs.open(shoppingSystem->outputurl, ios::out | ios::app);
     ofs << "1.1. 회원가입" << endl;
     ofs << "> " << name << " " << personalCode << " " << id << " " << password << endl << endl;
     ofs.close();
@@ -24,15 +25,15 @@ void UIinit::signUp(ShoppingSystem* curService, string name, string personalCode
     newbie.id = id;
     newbie.password = password;
 
-    curService->ctrlMemberManagement->addNewMember(curService, newbie);
+    shoppingSystem->ctrlMemberManagement->addNewMember(shoppingSystem, newbie);
 };
 
-void UIinit::logIn(ShoppingSystem* curService, string& id, string& password) {
+void UIinit::logIn(ShoppingSystem* shoppingSystem, string& id, string& password) {
 
     ofstream ofs;
     member logInInfo;
 
-    ofs.open(curService->outputurl, ios::out | ios::app);
+    ofs.open(shoppingSystem->outputurl, ios::out | ios::app);
     ofs << "2.1. 로그인" << endl;
     ofs << "> " << id << " " << password << endl << endl;
     ofs.close();
@@ -41,5 +42,5 @@ void UIinit::logIn(ShoppingSystem* curService, string& id, string& password) {
     logInInfo.id = id;
     logInInfo.password = password;
 
-    curService->ctrlMemberManagement->logInRequest(curService, logInInfo);
+    shoppingSystem->ctrlMemberManagement->logInRequest(shoppingSystem, logInInfo);
 };
