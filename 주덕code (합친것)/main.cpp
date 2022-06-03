@@ -168,11 +168,8 @@ int menuSwitch(string line, ShoppingSystem* shoppingSystem)
         case 4:
             /* code */
         {
-            string prmeter1 = x[2];
-            int point;
-            stringstream prmeter2(x[3]);
-            prmeter2 >> point;
-            shoppingSystem->uiEvaluateSatisfaction->evaluetePurchaseStf(prmeter1, point, shoppingSystem);
+           
+            shoppingSystem->uiEvaluateSatisfaction->evaluetePurchaseStf(x[2], x[3], shoppingSystem);
             return 1;
         }
 
