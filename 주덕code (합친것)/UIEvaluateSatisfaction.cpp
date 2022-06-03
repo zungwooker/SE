@@ -8,7 +8,8 @@
 
 void UIEvaluateSatisfaction::startInterface() {}
 
-void UIEvaluateSatisfaction::evaluetePurchaseStf(string prmt1, int point, ShoppingSystem* shoppingSystem) {
+void UIEvaluateSatisfaction::evaluetePurchaseStf(string prmt1, string pointstring, ShoppingSystem* shoppingSystem) {
+	prmeter2 >> point;
 	ofstream ofs;
 	//파일에서 값 받아 들이고...
 	ClothesBought clothesBought = shoppingSystem->ctrlEvaluateSatisfaction->setPoint(prmt1, point, shoppingSystem);
