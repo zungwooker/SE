@@ -11,9 +11,8 @@ UIAddNewClothes::UIAddNewClothes() {}
 
 void UIAddNewClothes::startInterface() {}
 
-void UIAddNewClothes::creasteNewClothes(string name, string company, string pricestring, string quantitystring, ShoppingSystem* shoppingsystem) {
-	prmeter3 >> price;
-	prmeter4 >> quantity;
+void UIAddNewClothes::creasteNewClothes(string name, string company, int price, int quantity, ShoppingSystem* shoppingsystem) {
+
 	ofstream ofs;
 
 	ofs.open(shoppingsystem->outputurl, ios::out | ios::app);

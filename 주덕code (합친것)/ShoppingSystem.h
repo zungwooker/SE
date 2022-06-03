@@ -32,7 +32,7 @@ class UIProfile;
 
 class ShoppingSystem {
 public:
-	string outputurl = "C:\\SE3_file\\output.txt";
+	string outputurl = "C:\\Users\\hanse\\OneDrive\\Desktop\\HW3\\output.txt";
 	MemberInfoDatabase* memberInfoDatabase;
 	CtrlMemberManagement* ctrlMemberManagement;
 	UIinit* uiInit;

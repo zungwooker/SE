@@ -39,7 +39,7 @@ void doTask(void) {
     string line;
     ifstream file;
     
-    file.open("C:\\SE3_file\\input.txt", ios::in);
+    file.open("C:\\Users\\hanse\\OneDrive\\Desktop\\HW3\\input.txt", ios::in);
     
     int is_program_exit = 1;
     
@@ -109,7 +109,13 @@ int menuSwitch(string line, ShoppingSystem* shoppingSystem)
         case 1:
             /* code */
         {
-            shoppingSystem->uiAddNewClothes->creasteNewClothes(x[2], x[3], x[4], x[5], shoppingSystem);
+            int price;
+            int quantity;
+            stringstream prmeter1(x[4]);
+            stringstream prmeter2(x[5]);
+            prmeter1 >> price;
+            prmeter2 >> quantity;
+            shoppingSystem->uiAddNewClothes->creasteNewClothes(x[2], x[3], price, quantity, shoppingSystem);
             return 1;
         }
         case 2:
@@ -157,8 +163,11 @@ int menuSwitch(string line, ShoppingSystem* shoppingSystem)
         case 4:
             /* code */
         {
-           
-            shoppingSystem->uiEvaluateSatisfaction->evaluetePurchaseStf(x[2], x[3], shoppingSystem);
+            string prmeter1 = x[2];
+            int point;
+            stringstream prmeter2(x[3]);
+            prmeter2 >> point;
+            shoppingSystem->uiEvaluateSatisfaction->evaluetePurchaseStf(prmeter1, point, shoppingSystem);
             return 1;
         }
 
