@@ -7,12 +7,11 @@
 #include "ShoppingSystem.h"
 
 
-UIAddNewClothes::UIAddNewClothes(){}
+UIAddNewClothes::UIAddNewClothes() {}
 
 void UIAddNewClothes::startInterface() {}
 
-void UIAddNewClothes::creasteNewClothes(string name, string company, int price, int quantity, ShoppingSystem* shoppingsystem)
-{
+void UIAddNewClothes::creasteNewClothes(string name, string company, int price, int quantity, ShoppingSystem* shoppingsystem) {
 	ofstream ofs;
 
 	ofs.open(shoppingsystem->outputurl, ios::out | ios::app);

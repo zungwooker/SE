@@ -6,8 +6,7 @@
 
 using namespace std;
 
-void UIGetClothesOnSale::startInterface(Clothes* clothes, ShoppingSystem* shoppingSystem)
-{
+void UIGetClothesOnSale::startInterface(Clothes* clothes, ShoppingSystem* shoppingSystem) {
 	ofstream ofs;
 	ofs.open(shoppingSystem->outputurl, ios::out | ios::app);
 	ofs << "3.2. 등록 상품 조회" << endl;

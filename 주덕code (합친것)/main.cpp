@@ -138,11 +138,6 @@ int menuSwitch(string line, ShoppingSystem* shoppingSystem)
         switch (menu_level_2)
         {
         case 1:
-            /* codeCtrlSearchClothes* ctrlSearchClothes = new CtrlSearchClothes();
-            database->curClothes =
-            ctrlSearchClothes->uiSearchClothes->
-            searchGoods(x[2], ctrlSearchClothes, database->productList);
-             */
         {
             shoppingSystem->uiSearchClothes->searchGoods(x[2], shoppingSystem);
             return 1;

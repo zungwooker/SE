@@ -25,8 +25,7 @@ bool ProductList::getGoods(string content, ShoppingSystem* shoppingSystem) {
 	return true;
 }
 
-bool ProductList::checkName(string name, ShoppingSystem* shoppingSystem)
-{
+bool ProductList::checkName(string name, ShoppingSystem* shoppingSystem) {
 
 	for (int i = 0; i < 100; i++) {
 		if (listClothes[i].getname() == shoppingSystem->memberInfoDatabase->getCurID())
@@ -36,8 +35,7 @@ bool ProductList::checkName(string name, ShoppingSystem* shoppingSystem)
 	}
 }
 
-void ProductList::createClothes(string name, string company, int price, int quantity, ShoppingSystem* shoppingSystem)
-{
+void ProductList::createClothes(string name, string company, int price, int quantity, ShoppingSystem* shoppingSystem) {
 	listClothes[curidx].setsellerID(shoppingSystem->memberInfoDatabase->getCurID());
 	listClothes[curidx].setname(name);
 	listClothes[curidx].setcompany(company);
