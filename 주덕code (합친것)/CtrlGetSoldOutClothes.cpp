@@ -1,7 +1,7 @@
 #include "ProductList.h"
 #include "UIGetSoldOutClothes.h"
 #include "CtrlGetSoldOutClothes.h"
-#include "ClothesSale.h"
+#include "Clothes.h"
 #include "ShoppingSystem.h"
 
 CtrlGetSoldOutClothes::CtrlGetSoldOutClothes(ShoppingSystem* shoppingSystem)

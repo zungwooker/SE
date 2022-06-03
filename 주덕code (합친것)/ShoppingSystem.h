@@ -16,7 +16,6 @@ class UIEvaluateSatisfaction;
 class UIInquiryPurchaseHistory;
 class UISearchClothes;
 
-class ClothesSale;
 class CtrlAddNewClothes;
 class CtrlGetClothesOnSale;
 class CtrlGetSaleStatics;
@@ -52,7 +51,6 @@ public:
 	UIInquiryPurchaseHistory* uiInquiryPurchaseHistory;
 	UISearchClothes* uiSearchClothes;
 
-	ClothesSale* clothesSale;
 	CtrlAddNewClothes* ctrlAddNewClothes;
 	CtrlGetClothesOnSale* ctrlGetClothesOnSale;
 	CtrlGetSaleStatics* ctrlGetSaleStatics;

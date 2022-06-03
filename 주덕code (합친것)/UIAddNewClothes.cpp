@@ -3,7 +3,6 @@
 #include "CtrlAddNewClothes.h"
 #include "UIAddNewClothes.h"
 #include "ProductList.h"
-#include "ClothesSale.h"
 #include "Clothes.h"
 #include "ShoppingSystem.h"
 

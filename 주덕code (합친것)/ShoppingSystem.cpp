@@ -10,7 +10,6 @@
 #include "UIEvaluateSatisfaction.h"
 #include "UIInquiryPurchaseHistory.h"
 #include "UISearchClothes.h"
-#include "ClothesSale.h"
 #include "CtrlAddNewClothes.h"
 #include "CtrlGetClothesOnSale.h"
 #include "CtrlGetSaleStatics.h"
@@ -43,7 +42,6 @@ ShoppingSystem::ShoppingSystem() {
 	ctrlEvaluateSatisfaction = new CtrlEvaluateSatisfaction();
 	ctrlSearchClothes = new CtrlSearchClothes();
 
-	clothesSale = new ClothesSale();
 	ctrlAddNewClothes = new CtrlAddNewClothes();
 	uiAddNewClothes = new UIAddNewClothes();
 	uiGetClothesOnSale = new UIGetClothesOnSale();
