@@ -109,13 +109,7 @@ int menuSwitch(string line, ShoppingSystem* shoppingSystem)
         case 1:
             /* code */
         {
-            int price;
-            stringstream prmeter1(x[4]);
-            prmeter1 >> price;
-            int quantity;
-            stringstream prmeter2(x[5]);
-            prmeter2 >> quantity;
-            shoppingSystem->uiAddNewClothes->creasteNewClothes(x[2], x[3], price, quantity, shoppingSystem);
+            shoppingSystem->uiAddNewClothes->creasteNewClothes(x[2], x[3], x[4], x[5], shoppingSystem);
             return 1;
         }
         case 2:
